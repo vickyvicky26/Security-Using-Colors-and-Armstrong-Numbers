@@ -1,0 +1,176 @@
+<%@ page contentType="text/html; charset=iso-8859-1" language="java" import="java.sql.*" errorPage="" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+<link rel="stylesheet" type="text/css" href="datepicker.css"/>
+<script type="text/javascript" src="datepicker.js"></script>
+<script type="text/javascript">
+function check()
+{
+if (document.getElementById('eid').value=="")
+{
+alert("Please enter Employee ID...");
+document.form1.eid.focus();
+return false;
+//document.getElementById('in').getAttributeNode('class').value="correct";
+}
+
+else if (document.getElementById('empname').value=="")
+{
+alert("Please enter Your Name...");
+document.form1.empname.focus();
+return false;
+//document.getElementById('in').getAttributeNode('class').value="correct";
+}
+else if (document.getElementById('designation').value=="")
+{
+alert("Please enter your designatin...");
+document.form1.designation.focus();
+return false;
+//document.getElementById('in').getAttributeNode('class').value="correct";
+}
+else if (document.getElementById('modeofleave').value=="")
+{
+alert("Please choose leave type...");
+document.form1.modeofleave.focus();
+return false;
+//document.getElementById('in').getAttributeNode('class').value="correct";
+}
+
+else if (document.getElementById('cdate').value=="")
+{
+alert("Please select date...");
+document.form1.date.focus();
+return false;
+//document.getElementById('in').getAttributeNode('class').value="correct";
+}
+else if (document.getElementById('cdate1').value=="")
+{
+alert("Please select date...");
+document.form1.date1.focus();
+return false;
+//document.getElementById('in').getAttributeNode('class').value="correct";
+}
+else if (document.getElementById('noofdays').value=="")
+{
+alert("Please enter number of day(s)..");
+document.form1.noofdays.focus();
+return false;
+//document.getElementById('in').getAttributeNode('class').value="correct";
+}
+else if (document.getElementById('purpose').value=="")
+{
+alert("Please give the reason...");
+document.form1.purpose.focus();
+return false;
+//document.getElementById('in').getAttributeNode('class').value="correct";
+}
+else if (document.getElementById('contactno').value=="")
+{
+alert("Please give your contact number...");
+document.form1.contactno.focus();
+return false;
+//document.getElementById('in').getAttributeNode('class').value="correct";
+}
+
+
+
+return true
+}
+</script>
+<style type="text/css">
+<!--
+.style1 {
+	color: #611632;
+	font-weight: bold;
+}
+.style2 {color: #663300}
+-->
+</style>
+</head>
+
+<body>
+<%!
+String eid="";
+%>
+<%
+eid=request.getParameter("eid");
+%>
+
+<form id="form1" name="form1" method="post" action="<%=request.getContextPath()%>/createuseraccount"  onsubmit="return check();" >
+  <table width="486" height="272" border="0" align="left">
+    <tr>
+      <td colspan="3"><hr /></td>
+    </tr>
+    <tr>
+      <td colspan="3"><div align="left" class="style1">Create Employee Account </div>        
+        <div align="left"></div></td>
+    </tr>
+    <tr>
+      <td colspan="3"><hr /></td>
+    </tr>
+    <tr>
+      <td colspan="2">&nbsp;</td>
+      <td width="239">&nbsp;</td>
+    </tr>
+    <tr>
+      <td width="64">&nbsp;</td>
+      <td width="169" align="left">&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td height="40">&nbsp;</td>
+      <td align="left">&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td height="40">&nbsp;</td>
+      <td align="left"><strong>Username <span class="style2">*</span> </strong></td>
+      <td><input name="username" type="text" id="username" size="30" /></td>
+    </tr>
+    <tr>
+      <td height="34">&nbsp;</td>
+      <td align="left"><strong>Password<span class="style2"> *</span></strong></td>
+      <td><input name="password" type="text" id="password" size="30" /></td>
+    </tr>
+    
+    <tr>
+      <td>&nbsp;</td>
+      <td align="left">R</td>
+      <td><input name="r" type="text" id="r" /></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td align="left">G</td>
+      <td><input name="g" type="text" id="g" /></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td align="left">B</td>
+      <td><input name="b" type="text" id="b" /></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td align="left">&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td align="left">&nbsp;</td>
+      <td><input type="submit" name="Submit" value="  Create  " /></td>
+    </tr>
+    <tr>
+      <td colspan="3"><hr /></td>
+    </tr>
+	 <tr>
+      <td colspan="3"><span class="style2">*</span><em>Important Fields</em></td>
+    </tr>
+      <td colspan="3"><hr /></td>
+    </tr>
+  </table>
+  <p>&nbsp;</p>
+</form>
+</body>
+</html>
